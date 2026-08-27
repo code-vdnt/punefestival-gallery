@@ -124,7 +124,7 @@ function EventModal({ event, onClose, onSaved }) {
               {coverPreview ? (
                 <>
                   <img
-                    src={coverPreview}
+                    src={coverPreview.startsWith('blob:') ? coverPreview : getImageUrl(coverPreview)}
                     alt="Cover preview"
                     className="w-full h-full object-cover"
                   />

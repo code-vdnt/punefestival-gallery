@@ -14,12 +14,12 @@
 
 const path = require('path');
 const fs = require('fs').promises;
-const fsSync = require('fs');
-
 class LocalStorageProvider {
   constructor() {
-    this.uploadsDir = path.resolve(process.env.UPLOADS_DIR || 'uploads');
-    this.baseUrl = `http://localhost:${process.env.PORT || 5000}`;
+    this.uploadsDir = process.env.UPLOADS_DIR 
+      ? path.resolve(process.env.UPLOADS_DIR) 
+      : path.resolve(__dirname, '../../uploads');
+    this.ensureDir(this.uploadsDir);
   }
 
   /**

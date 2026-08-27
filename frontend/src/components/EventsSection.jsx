@@ -1,7 +1,5 @@
-import { 
-  Sparkles, Music, Footprints, Flame, Trophy, 
-  Palette, Presentation, FolderClosed, ArrowRight, Images
-} from 'lucide-react';
+import { ArrowRight, Sparkles, Calendar, Images, Music, Eye, Award, Footprints, Flame, Trophy, Palette, Presentation, FolderClosed } from 'lucide-react';
+import { getImageUrl } from '../api';
 
 function getCategoryIcon(eventName = '') {
   const name = eventName.toLowerCase();
@@ -45,7 +43,7 @@ export default function EventsSection({
         {events.map((ev) => {
           const CategoryIcon = getCategoryIcon(ev.name);
           const isSelected = selectedEventId === ev.id;
-          const coverImage = ev.cover_thumbnail || ev.cover_medium;
+          const coverImage = ev.cover_image_url || ev.cover_medium || ev.cover_thumbnail;
 
           return (
             <div
@@ -61,7 +59,7 @@ export default function EventsSection({
               <div className="relative aspect-[16/10] bg-[#090d16] overflow-hidden">
                 {coverImage ? (
                   <img
-                    src={coverImage}
+                    src={getImageUrl(coverImage)}
                     alt={ev.name}
                     className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
                     loading="lazy"

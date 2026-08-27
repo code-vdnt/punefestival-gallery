@@ -59,9 +59,17 @@ app.use('/api/', apiLimiter);
 app.use('/api/photos/upload', uploadLimiter);
 
 // ── Static File Serving ──────────────────────────────────
-// Serve uploaded images with proper cache headers
-const uploadsPath = path.resolve(process.env.UPLOADS_DIR || 'uploads');
-app.use('/uploads', express.static(uploadsPath, {
+// Serve uploaded images with proper cross-origin & cache headers
+const uploadsPath = process.env.UPLOADS_DIR 
+  ? path.resolve(process.env.UPLOADS_DIR) 
+  : path.resolve(__dirname, '../uploads');
+
+app.use('/uploads', (req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
+  res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
+  next();
+}, express.static(uploadsPath, {
   maxAge: '7d',
   etag: true,
   lastModified: true,
