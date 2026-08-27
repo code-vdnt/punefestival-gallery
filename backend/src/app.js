@@ -9,6 +9,9 @@ const rateLimit = require('express-rate-limit');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Trust reverse proxies (Render, Cloudflare, Vercel load balancers)
+app.set('trust proxy', 1);
+
 // ── Security & Utilities ─────────────────────────────────
 app.use(helmet({
   crossOriginResourcePolicy: { policy: 'cross-origin' }, // Allow images to load cross-origin
@@ -46,12 +49,14 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 500,
+  validate: { xForwardedForHeader: false },
   message: { error: 'Too many requests, please try again later.' },
 });
 
 const uploadLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour
-  max: 50,
+  max: 200,
+  validate: { xForwardedForHeader: false },
   message: { error: 'Upload limit reached. Please wait before uploading more.' },
 });
 

@@ -1,5 +1,16 @@
 const db = require('../config/database');
 
+function safeParseTags(val) {
+  if (Array.isArray(val)) return val;
+  if (!val || typeof val !== 'string') return [];
+  try {
+    const parsed = JSON.parse(val);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return val ? val.split(',').map(s => s.trim()).filter(Boolean) : [];
+  }
+}
+
 const PhotoModel = {
   async findAll({
     eventId, albumId, year, search,
@@ -50,7 +61,7 @@ const PhotoModel = {
     const photos = rowsRes.rows.map(r => ({
       ...r,
       is_published: r.is_published === 1 || r.is_published === true,
-      tags: typeof r.tags === 'string' ? (() => { try { return JSON.parse(r.tags); } catch { return []; } })() : (r.tags || []),
+      tags: safeParseTags(r.tags),
     }));
 
     return { photos, total, page, limit, totalPages: Math.ceil(total / limit) };
@@ -71,7 +82,7 @@ const PhotoModel = {
     return {
       ...r,
       is_published: r.is_published === 1 || r.is_published === true,
-      tags: typeof r.tags === 'string' ? (() => { try { return JSON.parse(r.tags); } catch { return []; } })() : (r.tags || []),
+      tags: safeParseTags(r.tags),
     };
   },
 
@@ -86,7 +97,7 @@ const PhotoModel = {
     );
     const r = rows[0];
     if (!r) return null;
-    return { ...r, is_published: r.is_published === 1, tags: JSON.parse(r.tags || '[]') };
+    return { ...r, is_published: r.is_published === 1 || r.is_published === true, tags: safeParseTags(r.tags) };
   },
 
   async update(id, fields) {
@@ -148,7 +159,7 @@ const PhotoModel = {
     return rows.map(r => ({
       ...r,
       is_published: r.is_published === 1,
-      tags: typeof r.tags === 'string' ? (() => { try { return JSON.parse(r.tags); } catch { return []; } })() : [],
+      tags: safeParseTags(r.tags),
     }));
   },
 };
