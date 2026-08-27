@@ -86,9 +86,18 @@ app.use('/api/events', require('./routes/events'));
 app.use('/api/albums', require('./routes/albums'));
 app.use('/api/photos', require('./routes/photos'));
 
-// ── Health Check ─────────────────────────────────────────
+// ── Health Checks ─────────────────────────────────────────
+app.get('/', (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    message: 'Pune Festival Gallery API is running',
+    version: '1.0.0',
+    timestamp: new Date().toISOString(),
+  });
+});
+
 app.get('/api/health', (req, res) => {
-  res.json({
+  res.status(200).json({
     status: 'ok',
     timestamp: new Date().toISOString(),
     version: '1.0.0',
