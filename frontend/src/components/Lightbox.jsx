@@ -70,11 +70,11 @@ export default function Lightbox({
         
         {/* Left: Counter & Title */}
         <div className="flex items-center gap-3" onClick={(e) => e.stopPropagation()}>
-          <div className="px-3.5 py-1.5 rounded-full bg-[#101624]/90 border border-white/10 text-xs sm:text-sm font-bold text-amber-400">
+          <div className="px-3.5 py-1.5 rounded-full bg-[#1B1104]/90 border border-[#D82820]/40 text-xs sm:text-sm font-bold text-[#F8D800]">
             {currentIndex + 1} / {photos.length}
           </div>
           {photo.event_name && (
-            <span className="hidden sm:inline-block text-xs font-semibold text-slate-300 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
+            <span className="hidden sm:inline-block text-xs font-semibold text-slate-200 bg-white/10 px-3 py-1.5 rounded-full border border-white/10">
               {photo.event_name} {photo.year ? `(${photo.year})` : ''}
             </span>
           )}
@@ -85,7 +85,7 @@ export default function Lightbox({
           <a
             href={getImageUrl(photo.large_path || photo.medium_path || photo.original_path)}
             download={photo.title || 'pune-festival-photo'}
-            className="p-2.5 rounded-full bg-[#101624]/90 hover:bg-amber-500 hover:text-[#080c14] text-slate-200 border border-white/10 transition-all cursor-pointer"
+            className="p-2.5 rounded-full bg-[#1B1104]/90 hover:bg-[#D82820] text-slate-200 border border-white/10 transition-all cursor-pointer shadow-lg"
             title="Download Full Resolution"
           >
             <Download size={18} />
@@ -93,7 +93,7 @@ export default function Lightbox({
           
           <button
             onClick={onClose}
-            className="p-2.5 rounded-full bg-[#101624]/90 hover:bg-red-500/80 text-slate-200 border border-white/10 transition-all cursor-pointer"
+            className="p-2.5 rounded-full bg-[#1B1104]/90 hover:bg-[#D82820] text-slate-200 border border-white/10 transition-all cursor-pointer shadow-lg"
             title="Close (ESC)"
           >
             <X size={20} />
@@ -111,7 +111,7 @@ export default function Lightbox({
         {photos.length > 1 && (
           <button
             onClick={(e) => { e.stopPropagation(); onPrev(); }}
-            className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 p-3 sm:p-4 rounded-full bg-[#101624]/90 hover:bg-amber-500 hover:text-[#080c14] text-white border border-white/10 transition-all z-40 cursor-pointer shadow-2xl"
+            className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 p-3 sm:p-4 rounded-full bg-[#1B1104]/90 hover:bg-[#D82820] text-white border border-white/10 transition-all z-40 cursor-pointer shadow-2xl"
             title="Previous (←)"
           >
             <ChevronLeft size={24} className="stroke-[2.5]" />
@@ -124,7 +124,7 @@ export default function Lightbox({
           onClick={(e) => e.stopPropagation()}
         >
           {!imageLoaded && (
-            <div className="w-80 h-64 skeleton-dark flex items-center justify-center" />
+            <div className="w-80 h-64 skeleton-light flex items-center justify-center rounded-2xl" />
           )}
 
           <img
@@ -141,7 +141,7 @@ export default function Lightbox({
         {photos.length > 1 && (
           <button
             onClick={(e) => { e.stopPropagation(); onNext(); }}
-            className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 p-3 sm:p-4 rounded-full bg-[#101624]/90 hover:bg-amber-500 hover:text-[#080c14] text-white border border-white/10 transition-all z-40 cursor-pointer shadow-2xl"
+            className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 p-3 sm:p-4 rounded-full bg-[#1B1104]/90 hover:bg-[#D82820] text-white border border-white/10 transition-all z-40 cursor-pointer shadow-2xl"
             title="Next (→)"
           >
             <ChevronRight size={24} className="stroke-[2.5]" />
@@ -169,7 +169,7 @@ export default function Lightbox({
       {/* ── Bottom Thumbnail Navigation Strip ──────────────────── */}
       {photos.length > 1 && (
         <div 
-          className="p-3 sm:p-4 bg-[#080c14]/90 border-t border-white/10"
+          className="p-3 sm:p-4 bg-[#030106]/90 border-t border-white/10"
           onClick={(e) => e.stopPropagation()}
         >
           <div 
@@ -184,7 +184,7 @@ export default function Lightbox({
                   onClick={() => onSelectIndex(idx)}
                   className={`relative w-12 h-10 sm:w-16 sm:h-12 rounded-lg overflow-hidden flex-shrink-0 transition-all border-2 cursor-pointer ${
                     isActive
-                      ? 'border-amber-400 scale-110 shadow-lg shadow-amber-500/30'
+                      ? 'border-[#F8D800] scale-110 shadow-lg shadow-[#F8D800]/40'
                       : 'border-transparent opacity-50 hover:opacity-100'
                   }`}
                 >

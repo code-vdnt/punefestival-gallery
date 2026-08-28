@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, Shield, Menu, X, Landmark } from 'lucide-react';
+import { Search, Shield, Menu, X } from 'lucide-react';
 
 export default function Navbar({ 
   searchQuery = '', 
@@ -13,21 +13,28 @@ export default function Navbar({
   const isHome = location.pathname === '/';
 
   return (
-    <header className="sticky top-0 z-50 bg-[#080c14]/95 backdrop-blur-md border-b border-white/10 transition-all">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#E8DFD5] shadow-sm transition-all">
+      
+      {/* Decorative Festive Top Bar */}
+      <div className="h-1 w-full bg-gradient-to-r from-[#D82820] via-[#F8D800] to-[#E07810]" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* ── Left Side: Brand ───────────────────────────────────── */}
+          {/* ── Left Side: Pune Festival Brand ───────────────────── */}
           <Link to="/" className="flex items-center gap-3.5 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-[#080c14] shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
-              <Landmark size={20} className="stroke-[2.5]" />
+            {/* Signature Pune Festival Rhombus Emblem */}
+            <div className="w-11 h-11 bg-[#F8D800] border-2 border-[#D82820] rotate-45 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
+              <span className="-rotate-45 font-['Cinzel'] font-black text-[#D82820] text-sm">
+                ॐ
+              </span>
             </div>
             
-            <div className="flex flex-col">
-              <span className="font-['Cinzel'] text-base sm:text-lg font-extrabold tracking-widest text-white leading-tight">
+            <div className="flex flex-col ml-1">
+              <span className="font-['Cinzel'] text-base sm:text-lg font-extrabold tracking-wider text-[#D82820] leading-tight">
                 PUNE FESTIVAL
               </span>
-              <span className="text-[11px] font-bold tracking-[0.2em] text-amber-400 uppercase leading-none mt-0.5">
+              <span className="text-[10px] font-extrabold tracking-[0.25em] text-[#E07810] uppercase leading-none mt-0.5">
                 PHOTO GALLERY
               </span>
             </div>
@@ -37,13 +44,13 @@ export default function Navbar({
           <nav className="hidden md:flex items-center gap-8">
             <Link
               to="/"
-              className={`text-sm font-semibold tracking-wider transition-colors relative py-1 ${
-                isHome ? 'text-amber-400' : 'text-slate-300 hover:text-white'
+              className={`text-sm font-bold tracking-wide transition-colors relative py-1 ${
+                isHome ? 'text-[#D82820]' : 'text-[#5A524A] hover:text-[#D82820]'
               }`}
             >
               Home
               {isHome && (
-                <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-amber-400 rounded-full shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
+                <span className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#D82820] rounded-full" />
               )}
             </Link>
 
@@ -54,7 +61,7 @@ export default function Navbar({
                   document.getElementById('events-grid')?.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="text-sm font-semibold tracking-wider text-slate-300 hover:text-white transition-colors"
+              className="text-sm font-bold tracking-wide text-[#5A524A] hover:text-[#D82820] transition-colors"
             >
               Events
             </Link>
@@ -66,117 +73,101 @@ export default function Navbar({
                   document.getElementById('events-grid')?.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="text-sm font-semibold tracking-wider text-slate-300 hover:text-white transition-colors"
+              className="text-sm font-bold tracking-wide text-[#5A524A] hover:text-[#D82820] transition-colors"
             >
-              Gallery
+              Archive
             </Link>
           </nav>
 
-          {/* ── Right Side: Search & Admin Button ──────────────────── */}
-          <div className="hidden sm:flex items-center gap-4">
+          {/* ── Right Side: Search + Admin Portal ─────────────────── */}
+          <div className="flex items-center gap-3 sm:gap-4">
             
-            {/* Search Bar */}
+            {/* Search Box */}
             {showSearch && (
-              <div className="relative">
-                <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+              <div className="relative hidden sm:block w-48 lg:w-64">
                 <input
                   type="text"
+                  placeholder="Search events & photos..."
                   value={searchQuery}
                   onChange={(e) => onSearchChange(e.target.value)}
-                  placeholder="Search events..."
-                  className="w-48 lg:w-60 pl-9 pr-4 py-2 bg-[#101624] border border-white/10 hover:border-amber-500/30 focus:border-amber-400 focus:bg-[#141c2e] focus:w-64 text-xs lg:text-sm text-slate-100 rounded-full outline-none transition-all placeholder:text-slate-500"
+                  className="w-full bg-[#FAF8F5] text-xs font-semibold text-[#1B1104] placeholder:text-[#8C827A] pl-8 pr-3 py-2 rounded-full border border-[#E8DFD5] focus:outline-none focus:border-[#D82820] focus:ring-1 focus:ring-[#D82820] transition-all"
                 />
-                {searchQuery && (
-                  <button 
-                    onClick={() => onSearchChange('')}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-xs cursor-pointer"
-                  >
-                    ✕
-                  </button>
-                )}
+                <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8C827A]" />
               </div>
             )}
 
-            {/* Admin Button */}
+            {/* Admin Portal Button */}
             <Link
-              to="/admin"
-              className="btn-gold text-xs !py-2 !px-4 !rounded-full font-bold shadow-md shadow-amber-500/20"
-              title="Admin Dashboard"
+              to="/admin/login"
+              className="btn-pf-crimson text-xs !py-2 !px-4 uppercase tracking-wider"
+              title="Admin Portal"
             >
               <Shield size={14} className="stroke-[2.5]" />
-              <span>Admin</span>
+              <span className="hidden sm:inline">Admin</span>
             </Link>
 
-          </div>
-
-          {/* ── Mobile Hamburger ───────────────────────────────────── */}
-          <div className="flex items-center gap-2 sm:hidden">
-            <Link
-              to="/admin"
-              className="p-2 rounded-xl bg-amber-500/15 text-amber-400 border border-amber-500/30 text-xs font-bold"
-            >
-              <Shield size={16} />
-            </Link>
-            
+            {/* Mobile Hamburger Menu */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl bg-[#101624] text-slate-300 hover:text-white border border-white/10"
-              aria-label="Toggle Menu"
+              className="md:hidden p-2 rounded-xl text-[#1B1104] hover:bg-[#FAF8F5] transition-colors"
             >
-              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
+
           </div>
 
         </div>
       </div>
 
-      {/* ── Mobile Menu ────────────────────────────────────────── */}
+      {/* ── Mobile Menu Dropdown ──────────────────────────────────── */}
       {mobileMenuOpen && (
-        <div className="sm:hidden bg-[#090d16] border-b border-white/10 px-4 py-4 space-y-3 animate-fade-in">
+        <div className="md:hidden border-t border-[#E8DFD5] bg-white px-4 pt-3 pb-5 space-y-3 shadow-lg animate-fade-in">
           {showSearch && (
-            <div className="relative mb-2">
-              <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+            <div className="relative">
               <input
                 type="text"
+                placeholder="Search events & photos..."
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
-                placeholder="Search events..."
-                className="input-dark pl-9 text-xs rounded-full"
+                className="w-full bg-[#FAF8F5] text-xs text-[#1B1104] pl-8 pr-3 py-2 rounded-full border border-[#E8DFD5] focus:outline-none focus:border-[#D82820]"
               />
+              <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8C827A]" />
             </div>
           )}
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col space-y-2 pt-2">
             <Link
               to="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 rounded-lg text-sm font-semibold text-slate-200 hover:bg-amber-500/10 hover:text-amber-400"
+              className={`px-3 py-2 rounded-xl text-sm font-bold transition-colors ${
+                isHome ? 'bg-[#D82820] text-white' : 'text-[#1B1104] hover:bg-[#FAF8F5]'
+              }`}
             >
               Home
             </Link>
+            
             <Link
               to="/#events"
               onClick={() => {
                 setMobileMenuOpen(false);
                 document.getElementById('events-grid')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-3 py-2 rounded-lg text-sm font-semibold text-slate-200 hover:bg-amber-500/10 hover:text-amber-400"
+              className="px-3 py-2 rounded-xl text-sm font-bold text-[#1B1104] hover:bg-[#FAF8F5] transition-colors"
             >
               Events
             </Link>
+
             <Link
-              to="/#gallery"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                document.getElementById('events-grid')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="px-3 py-2 rounded-lg text-sm font-semibold text-slate-200 hover:bg-amber-500/10 hover:text-amber-400"
+              to="/admin/login"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 rounded-xl text-sm font-bold text-[#D82820] hover:bg-[#FAF8F5] transition-colors"
             >
-              Gallery
+              Admin Portal
             </Link>
           </div>
         </div>
       )}
+
     </header>
   );
 }

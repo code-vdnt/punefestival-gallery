@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Images, Loader2, Sparkles, Search, 
-  Calendar, ArrowRight, Shield 
+  Calendar, ArrowRight, Shield, Award, Heart
 } from 'lucide-react';
 import { eventsAPI } from '../api';
 import Navbar from '../components/Navbar';
@@ -47,7 +47,7 @@ export default function GalleryPage() {
   const combinedYears = Array.from(new Set([...years, ...defaultYears])).sort((a, b) => b - a);
 
   return (
-    <div className="min-h-screen bg-[#080c14] text-slate-100 flex flex-col font-['Plus_Jakarta_Sans']">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#1B1104] flex flex-col font-['Plus_Jakarta_Sans']">
       
       {/* ── 1. Minimal Header / Navigation ──────────────────────── */}
       <Navbar
@@ -57,118 +57,109 @@ export default function GalleryPage() {
       />
 
       {/* ── 2. Hero Section ─────────────────────────────────────── */}
-      <section className="relative overflow-hidden border-b border-white/10 bg-[#080c14] py-16 sm:py-20 lg:py-24">
-        {/* Subtle background glow */}
+      <section className="relative overflow-hidden border-b border-[#E8DFD5] bg-white py-14 sm:py-20 lg:py-24">
+        {/* Subtle festive background glow */}
         <div 
-          className="absolute inset-0 pointer-events-none opacity-30"
+          className="absolute inset-0 pointer-events-none opacity-60"
           style={{
             backgroundImage: `
-              radial-gradient(ellipse 80% 50% at 50% 20%, rgba(245, 158, 11, 0.12) 0%, transparent 60%)
+              radial-gradient(ellipse 70% 50% at 50% 10%, rgba(248, 216, 0, 0.18) 0%, transparent 70%),
+              radial-gradient(ellipse 60% 40% at 85% 40%, rgba(216, 40, 32, 0.06) 0%, transparent 60%)
             `
           }}
         />
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-4">
           
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-400 text-xs font-bold tracking-widest uppercase">
-            <Sparkles size={13} />
-            <span>OFFICIAL ARCHIVE</span>
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF0E6] border border-[#D82820]/30 text-[#D82820] text-xs font-extrabold tracking-widest uppercase shadow-sm">
+            <Sparkles size={13} className="text-[#E07810]" />
+            <span>OFFICIAL PHOTO ARCHIVE</span>
           </div>
 
-          <h1 className="font-['Cinzel'] text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+          {/* Main Title */}
+          <h1 className="font-['Cinzel'] text-4xl sm:text-5xl lg:text-6xl font-black text-[#D82820] tracking-tight leading-tight">
             PUNE FESTIVAL
           </h1>
 
-          <h2 className="font-['Playfair_Display'] text-3xl sm:text-4xl lg:text-5xl font-bold gold-text-gradient italic">
-            Photo Gallery
+          <h2 className="font-['Playfair_Display'] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#E07810] italic">
+            Celebrating 37 Glorious Years of Culture & Art
           </h2>
 
-          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed pt-2">
-            Explore memorable moments from Pune Festival through our collection of events.
+          <p className="text-[#5A524A] text-sm sm:text-base max-w-2xl mx-auto leading-relaxed pt-1">
+            Immerse yourself in high-definition photographs from classical music concerts, traditional dance performances, arts, sports, and cultural spectacles.
           </p>
 
         </div>
       </section>
 
       {/* ── 3. Events Grid Section ───────────────────────────────── */}
-      <main id="events-grid" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-1 w-full">
+      <main id="events-grid" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 w-full">
         
         {/* ── Year Filters & Search Summary ───────────────────────── */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-4 border-b border-white/10">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-4 border-b border-[#E8DFD5]">
           
           {/* Year Pills */}
           <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
             <button
               onClick={() => setSelectedYear('')}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all cursor-pointer whitespace-nowrap ${
-                !selectedYear ? 'pill-active' : 'pill-inactive'
-              }`}
+              className={`pill-pf ${selectedYear === '' ? 'active' : ''}`}
             >
-              All Events
+              All Years
             </button>
-
             {combinedYears.map((yr) => (
               <button
                 key={yr}
-                onClick={() => setSelectedYear(yr)}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all cursor-pointer whitespace-nowrap ${
-                  String(selectedYear) === String(yr) ? 'pill-active' : 'pill-inactive'
-                }`}
+                onClick={() => setSelectedYear(String(yr))}
+                className={`pill-pf ${selectedYear === String(yr) ? 'active' : ''}`}
               >
                 {yr}
               </button>
             ))}
           </div>
 
-          {/* Result Count / Clear button */}
-          <div className="flex items-center gap-3 text-xs text-slate-400">
-            <span>{filteredEvents.length} {filteredEvents.length === 1 ? 'Event' : 'Events'} Available</span>
-            
-            {(searchQuery || selectedYear) && (
-              <button
-                onClick={() => { setSearchQuery(''); setSelectedYear(''); }}
-                className="text-amber-400 hover:text-amber-300 font-semibold cursor-pointer"
-              >
-                Reset Filters ✕
-              </button>
-            )}
+          {/* Result Count Indicator */}
+          <div className="text-xs sm:text-sm font-semibold text-[#8C827A]">
+            Showing <span className="font-bold text-[#D82820]">{filteredEvents.length}</span> {filteredEvents.length === 1 ? 'Event' : 'Events'}
+            {selectedYear && <span> in {selectedYear}</span>}
           </div>
 
         </div>
 
-        {/* ── Event Cards Grid ────────────────────────────────────── */}
+        {/* ── Events Grid / Loading / Empty States ────────────────── */}
         {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="skeleton-dark rounded-2xl aspect-[16/14]" />
+              <div key={i} className="skeleton-light aspect-[16/11] rounded-2xl" />
             ))}
           </div>
         ) : filteredEvents.length === 0 ? (
-          /* ── Empty State ── */
-          <div className="dark-panel rounded-3xl p-16 text-center max-w-md mx-auto my-12 border border-white/10 space-y-4">
-            <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center mx-auto text-amber-400">
+          <div className="bg-white rounded-3xl p-16 text-center max-w-lg mx-auto my-12 space-y-4 border border-[#E8DFD5] shadow-sm">
+            <div className="w-16 h-16 rounded-2xl bg-[#F8D800]/15 border border-[#F8D800]/40 flex items-center justify-center mx-auto text-[#D82820]">
               <Images size={30} className="stroke-[1.8]" />
             </div>
             
-            <h3 className="text-xl font-bold font-['Cinzel'] text-white">
-              No Events Available Yet
+            <h3 className="text-xl font-bold font-['Cinzel'] text-[#1B1104]">
+              No Events Found
             </h3>
             
-            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-              New Pune Festival memories will appear here soon. Check back later or explore other years.
+            <p className="text-xs sm:text-sm text-[#5A524A] leading-relaxed">
+              {searchQuery 
+                ? `No events matched "${searchQuery}". Try clearing your search.`
+                : `No events are available for the selected year.`}
             </p>
 
             {(searchQuery || selectedYear) && (
               <button
                 onClick={() => { setSearchQuery(''); setSelectedYear(''); }}
-                className="btn-gold !py-2 !px-4 text-xs font-bold uppercase tracking-wider inline-flex"
+                className="btn-pf-crimson text-xs uppercase tracking-wider inline-flex"
               >
-                Show All Events
+                Clear Filters
               </button>
             )}
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 animate-fade-in">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 animate-fade-in">
             {filteredEvents.map((event) => (
               <EventCard key={event.id} event={event} />
             ))}
@@ -177,29 +168,33 @@ export default function GalleryPage() {
 
       </main>
 
-      {/* ── Minimal Footer ──────────────────────────────────────── */}
-      <footer className="bg-[#05080e] border-t border-white/10 mt-20 py-8 text-slate-500 text-xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2 text-slate-400">
-            <span className="font-['Cinzel'] font-bold text-white tracking-widest text-sm">
-              PUNE FESTIVAL
-            </span>
-            <span>· Official Photo Gallery</span>
+      {/* ── 4. Minimal Cultural Footer ───────────────────────────── */}
+      <footer className="border-t border-[#E8DFD5] bg-white py-10 mt-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          
+          <div className="flex items-center gap-3">
+            <div className="w-7 h-7 bg-[#F8D800] border border-[#D82820] rotate-45 flex items-center justify-center">
+              <span className="-rotate-45 font-['Cinzel'] font-black text-[#D82820] text-[10px]">
+                ॐ
+              </span>
+            </div>
+            <p className="text-xs font-semibold text-[#5A524A]">
+              © {new Date().getFullYear()} <span className="text-[#D82820] font-bold">Pune Festival</span>. All Rights Reserved.
+            </p>
           </div>
 
-          <div className="flex items-center gap-6">
-            <Link to="/" className="hover:text-amber-400 transition-colors">
-              Home
+          <div className="flex items-center gap-6 text-xs font-semibold text-[#8C827A]">
+            <a href="https://punefestival.in" target="_blank" rel="noreferrer" className="hover:text-[#D82820] transition-colors">
+              Official Website
+            </a>
+            <Link to="/#events" className="hover:text-[#D82820] transition-colors">
+              All Events
             </Link>
-            <Link to="/#events" className="hover:text-amber-400 transition-colors">
-              Events
-            </Link>
-            <Link to="/admin" className="text-amber-400 hover:underline font-semibold">
-              Admin Login
+            <Link to="/admin/login" className="hover:text-[#D82820] transition-colors">
+              Admin
             </Link>
           </div>
 
-          <p>© {new Date().getFullYear()} Pune Festival. All rights reserved.</p>
         </div>
       </footer>
 
