@@ -1,28 +1,22 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Images, Loader2, Sparkles, Search, 
-  Calendar, ArrowRight, Shield, Award, Heart
-} from 'lucide-react';
+import { Images, Sparkles } from 'lucide-react';
 import { eventsAPI } from '../api';
 import Navbar from '../components/Navbar';
 import EventCard from '../components/EventCard';
 
 export default function GalleryPage() {
   const [events, setEvents] = useState([]);
-  const [years, setYears] = useState([]);
   const [loading, setLoading] = useState(true);
 
   // Simple Filters
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedYear, setSelectedYear] = useState('');
 
   // Load events
   useEffect(() => {
     eventsAPI.getAll()
       .then((res) => {
         setEvents(res.data.events || []);
-        setYears(res.data.years || [2025, 2024]);
       })
       .catch((err) => {
         console.error('Failed to load events:', err);
@@ -32,19 +26,15 @@ export default function GalleryPage() {
       });
   }, []);
 
-  // Filtered Events based on Year and Search query
+  // Filtered Events based on Search query
   const filteredEvents = useMemo(() => {
     return events.filter((ev) => {
-      const matchYear = !selectedYear || String(ev.year) === String(selectedYear);
       const matchSearch = !searchQuery.trim() || 
         ev.name.toLowerCase().includes(searchQuery.toLowerCase().trim()) ||
         (ev.description && ev.description.toLowerCase().includes(searchQuery.toLowerCase().trim()));
-      return matchYear && matchSearch;
+      return matchSearch;
     });
-  }, [events, selectedYear, searchQuery]);
-
-  const defaultYears = [2025, 2024, 2023, 2022];
-  const combinedYears = Array.from(new Set([...years, ...defaultYears])).sort((a, b) => b - a);
+  }, [events, searchQuery]);
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-[#1B1104] flex flex-col font-['Plus_Jakarta_Sans']">
@@ -96,34 +86,17 @@ export default function GalleryPage() {
       {/* ── 3. Events Grid Section ───────────────────────────────── */}
       <main id="events-grid" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 w-full">
         
-        {/* ── Year Filters & Search Summary ───────────────────────── */}
+        {/* ── Events Grid Header & Count Indicator ────────────────── */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-4 border-b border-[#E8DFD5]">
-          
-          {/* Year Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
-            <button
-              onClick={() => setSelectedYear('')}
-              className={`pill-pf ${selectedYear === '' ? 'active' : ''}`}
-            >
-              All Years
-            </button>
-            {combinedYears.map((yr) => (
-              <button
-                key={yr}
-                onClick={() => setSelectedYear(String(yr))}
-                className={`pill-pf ${selectedYear === String(yr) ? 'active' : ''}`}
-              >
-                {yr}
-              </button>
-            ))}
-          </div>
+          <h3 className="font-['Cinzel'] text-xl sm:text-2xl font-bold text-[#1B1104]">
+            Festival Events & Highlights
+          </h3>
 
           {/* Result Count Indicator */}
           <div className="text-xs sm:text-sm font-semibold text-[#8C827A]">
             Showing <span className="font-bold text-[#D82820]">{filteredEvents.length}</span> {filteredEvents.length === 1 ? 'Event' : 'Events'}
-            {selectedYear && <span> in {selectedYear}</span>}
+            {searchQuery && <span> for &ldquo;{searchQuery}&rdquo;</span>}
           </div>
-
         </div>
 
         {/* ── Events Grid / Loading / Empty States ────────────────── */}
