@@ -173,11 +173,11 @@ export default function GalleryPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           
           <div className="flex items-center gap-3">
-            <div className="w-7 h-7 bg-[#F8D800] border border-[#D82820] rotate-45 flex items-center justify-center">
-              <span className="-rotate-45 font-['Cinzel'] font-black text-[#D82820] text-[10px]">
-                ॐ
-              </span>
-            </div>
+            <img
+              src="/logo.png"
+              alt="Pune Festival Logo"
+              className="h-8 w-auto object-contain"
+            />
             <p className="text-xs font-semibold text-[#5A524A]">
               © {new Date().getFullYear()} <span className="text-[#D82820] font-bold">Pune Festival</span>. All Rights Reserved.
             </p>

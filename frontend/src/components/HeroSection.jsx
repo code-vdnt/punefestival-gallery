@@ -38,10 +38,17 @@ export default function HeroSection({
           {/* ── Left Side Content ─────────────────────────────────── */}
           <div className="lg:col-span-7 space-y-4 text-left">
             
-            {/* Small uppercase tag */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold tracking-widest uppercase">
-              <Sparkles size={13} className="text-amber-400" />
-              <span>WELCOME TO</span>
+            {/* Small uppercase tag with Official Logo */}
+            <div className="flex items-center gap-3.5">
+              <img 
+                src="/logo.png" 
+                alt="Pune Festival Official Logo" 
+                className="w-14 h-14 sm:w-16 sm:h-16 object-contain bg-white/5 border border-amber-500/30 p-1 rounded-2xl shadow-lg shadow-amber-500/10 backdrop-blur-sm"
+              />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold tracking-widest uppercase">
+                <Sparkles size={13} className="text-amber-400" />
+                <span>OFFICIAL PHOTO ARCHIVE</span>
+              </div>
             </div>
 
             {/* Main Headings */}

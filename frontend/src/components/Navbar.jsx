@@ -23,14 +23,13 @@ export default function Navbar({
           
           {/* ── Left Side: Pune Festival Brand ───────────────────── */}
           <Link to="/" className="flex items-center gap-3.5 group">
-            {/* Signature Pune Festival Rhombus Emblem */}
-            <div className="w-11 h-11 bg-[#F8D800] border-2 border-[#D82820] rotate-45 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
-              <span className="-rotate-45 font-['Cinzel'] font-black text-[#D82820] text-sm">
-                ॐ
-              </span>
-            </div>
+            <img
+              src="/logo.png"
+              alt="Pune Festival Logo"
+              className="h-12 sm:h-14 w-auto object-contain max-h-[56px] group-hover:scale-105 transition-transform flex-shrink-0"
+            />
             
-            <div className="flex flex-col ml-1">
+            <div className="flex flex-col">
               <span className="font-['Cinzel'] text-base sm:text-lg font-extrabold tracking-wider text-[#D82820] leading-tight">
                 PUNE FESTIVAL
               </span>

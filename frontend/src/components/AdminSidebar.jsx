@@ -27,9 +27,11 @@ export default function AdminSidebar() {
       <div>
         <div className="px-3 py-5 border-b border-white/10 mb-6">
           <Link to="/admin" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center shadow-lg shadow-amber-500/20 text-[#080c14]">
-              <Landmark size={20} className="stroke-[2.5]" />
-            </div>
+            <img
+              src="/logo.png"
+              alt="Pune Festival"
+              className="w-10 h-10 object-contain rounded-lg p-0.5 bg-white/5 border border-amber-500/30 flex-shrink-0"
+            />
             <div>
               <p className="font-['Cinzel'] font-black text-white text-sm tracking-wider leading-none">
                 PUNE FESTIVAL

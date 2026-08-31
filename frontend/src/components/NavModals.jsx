@@ -60,9 +60,11 @@ export default function NavModals({ modalType = null, onClose = () => {} }) {
         {modalType === 'about' && (
           <div className="space-y-5">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400">
-                <Landmark size={24} />
-              </div>
+              <img
+                src="/logo.png"
+                alt="Pune Festival"
+                className="w-12 h-12 object-contain bg-white/5 border border-amber-500/30 p-1 rounded-2xl shadow-lg shadow-amber-500/10"
+              />
               <div>
                 <h2 className="font-['Cinzel'] text-2xl font-bold text-white">About Pune Festival</h2>
                 <p className="text-xs text-amber-400">Pride of Maharashtra's Cultural Heritage</p>

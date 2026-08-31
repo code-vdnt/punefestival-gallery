@@ -53,9 +53,11 @@ export default function AdminLoginPage() {
           
           {/* Logo & Header */}
           <div className="text-center mb-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center mx-auto mb-4 shadow-xl shadow-amber-500/25 text-[#080c14]">
-              <Landmark size={28} className="stroke-[2.5]" />
-            </div>
+            <img
+              src="/logo.png"
+              alt="Pune Festival Official Logo"
+              className="w-20 h-20 object-contain mx-auto mb-4 bg-white/5 border border-amber-500/30 p-1.5 rounded-2xl shadow-xl shadow-amber-500/20"
+            />
             
             <h1 className="font-['Cinzel'] text-2xl font-extrabold text-white tracking-wide">
               ADMIN PORTAL
