@@ -29,7 +29,31 @@ function slugify(text) {
     .replace(/\-\-+/g, '-');
 }
 
+function getCustomPhotosDir() {
+  const args = process.argv.slice(2);
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--photos-dir' || args[i] === '-p') {
+      if (args[i + 1]) return path.resolve(args[i + 1]);
+    }
+    if (args[i].startsWith('--photos-dir=')) {
+      return path.resolve(args[i].split('=')[1]);
+    }
+  }
+  if (process.env.PHOTOS_DIR) {
+    return path.resolve(process.env.PHOTOS_DIR);
+  }
+  return null;
+}
+
 function findPhotosRoot() {
+  const custom = getCustomPhotosDir();
+  if (custom) {
+    if (fs.existsSync(custom)) {
+      console.log(`📁 Using custom photos directory: ${custom}`);
+      return custom;
+    }
+    console.warn(`⚠️ Warning: Specified photos directory does not exist: ${custom}`);
+  }
   for (const root of CANDIDATE_ROOTS) {
     if (fs.existsSync(root)) return root;
   }

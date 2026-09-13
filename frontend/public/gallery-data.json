@@ -1,8 +1,35 @@
 {
   "years": [
+    2026,
     2025
   ],
   "events": [
+    {
+      "id": "manglacharan-2026",
+      "slug": "manglacharan",
+      "name": "Manglacharan",
+      "year": 2026,
+      "description": "Photographs from Manglacharan - Pune Festival 2026.",
+      "cover_image_url": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30329-pm-1.webp",
+      "cover_medium": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30329-pm-1.webp",
+      "cover_thumbnail": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30329-pm-1.webp",
+      "photo_count": 19,
+      "is_published": true,
+      "display_order": 0
+    },
+    {
+      "id": "press-conference-2026",
+      "slug": "press-conference",
+      "name": "Press Conference",
+      "year": 2026,
+      "description": "Photographs from Press Conference - Pune Festival 2026.",
+      "cover_image_url": "/gallery/2026/press-conference/medium/photo-whatsapp-image-2026-09-12-at-62640-pm-1.webp",
+      "cover_medium": "/gallery/2026/press-conference/medium/photo-whatsapp-image-2026-09-12-at-62640-pm-1.webp",
+      "cover_thumbnail": "/gallery/2026/press-conference/medium/photo-whatsapp-image-2026-09-12-at-62640-pm-1.webp",
+      "photo_count": 8,
+      "is_published": true,
+      "display_order": 1
+    },
     {
       "id": "cartoonotsav-2025",
       "slug": "cartoonotsav",
@@ -174,6 +201,334 @@
     }
   ],
   "photos": {
+    "manglacharan-2026": [
+      {
+        "id": "manglacharan-2026-p1",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.29 PM (1)",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30329-pm-1.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30329-pm-1.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30329-pm-1.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p2",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.29 PM",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30329-pm.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30329-pm.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30329-pm.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p3",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.30 PM (1)",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30330-pm-1.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30330-pm-1.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30330-pm-1.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p4",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.30 PM",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30330-pm.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30330-pm.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30330-pm.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p5",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.31 PM (1)",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30331-pm-1.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30331-pm-1.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30331-pm-1.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p6",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.31 PM",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30331-pm.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30331-pm.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30331-pm.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p7",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.32 PM (1)",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30332-pm-1.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30332-pm-1.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30332-pm-1.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p8",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.32 PM",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30332-pm.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30332-pm.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30332-pm.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p9",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.35 PM",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30335-pm.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30335-pm.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30335-pm.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p10",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.36 PM",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30336-pm.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30336-pm.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30336-pm.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p11",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.37 PM (1)",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30337-pm-1.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30337-pm-1.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30337-pm-1.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p12",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.37 PM",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30337-pm.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30337-pm.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30337-pm.webp",
+        "width": 1066,
+        "height": 1600
+      },
+      {
+        "id": "manglacharan-2026-p13",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.38 PM (1)",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30338-pm-1.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30338-pm-1.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30338-pm-1.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p14",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.38 PM",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30338-pm.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30338-pm.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30338-pm.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p15",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.39 PM (1)",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30339-pm-1.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30339-pm-1.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30339-pm-1.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p16",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.39 PM",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30339-pm.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30339-pm.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30339-pm.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p17",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.40 PM (1)",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30340-pm-1.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30340-pm-1.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30340-pm-1.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p18",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.40 PM",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30340-pm.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30340-pm.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30340-pm.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "manglacharan-2026-p19",
+        "event_id": "manglacharan-2026",
+        "event_name": "Manglacharan",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 13 at 3.03.41 PM",
+        "thumbnail_path": "/gallery/2026/manglacharan/thumbnails/photo-whatsapp-image-2026-09-13-at-30341-pm.webp",
+        "medium_path": "/gallery/2026/manglacharan/medium/photo-whatsapp-image-2026-09-13-at-30341-pm.webp",
+        "large_path": "/gallery/2026/manglacharan/large/photo-whatsapp-image-2026-09-13-at-30341-pm.webp",
+        "width": 1600,
+        "height": 1066
+      }
+    ],
+    "press-conference-2026": [
+      {
+        "id": "press-conference-2026-p1",
+        "event_id": "press-conference-2026",
+        "event_name": "Press Conference",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 12 at 6.26.40 PM (1)",
+        "thumbnail_path": "/gallery/2026/press-conference/thumbnails/photo-whatsapp-image-2026-09-12-at-62640-pm-1.webp",
+        "medium_path": "/gallery/2026/press-conference/medium/photo-whatsapp-image-2026-09-12-at-62640-pm-1.webp",
+        "large_path": "/gallery/2026/press-conference/large/photo-whatsapp-image-2026-09-12-at-62640-pm-1.webp",
+        "width": 1280,
+        "height": 853
+      },
+      {
+        "id": "press-conference-2026-p2",
+        "event_id": "press-conference-2026",
+        "event_name": "Press Conference",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 12 at 6.26.40 PM",
+        "thumbnail_path": "/gallery/2026/press-conference/thumbnails/photo-whatsapp-image-2026-09-12-at-62640-pm.webp",
+        "medium_path": "/gallery/2026/press-conference/medium/photo-whatsapp-image-2026-09-12-at-62640-pm.webp",
+        "large_path": "/gallery/2026/press-conference/large/photo-whatsapp-image-2026-09-12-at-62640-pm.webp",
+        "width": 1280,
+        "height": 853
+      },
+      {
+        "id": "press-conference-2026-p3",
+        "event_id": "press-conference-2026",
+        "event_name": "Press Conference",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 12 at 6.26.41 PM (1)",
+        "thumbnail_path": "/gallery/2026/press-conference/thumbnails/photo-whatsapp-image-2026-09-12-at-62641-pm-1.webp",
+        "medium_path": "/gallery/2026/press-conference/medium/photo-whatsapp-image-2026-09-12-at-62641-pm-1.webp",
+        "large_path": "/gallery/2026/press-conference/large/photo-whatsapp-image-2026-09-12-at-62641-pm-1.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "press-conference-2026-p4",
+        "event_id": "press-conference-2026",
+        "event_name": "Press Conference",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 12 at 6.26.41 PM (2)",
+        "thumbnail_path": "/gallery/2026/press-conference/thumbnails/photo-whatsapp-image-2026-09-12-at-62641-pm-2.webp",
+        "medium_path": "/gallery/2026/press-conference/medium/photo-whatsapp-image-2026-09-12-at-62641-pm-2.webp",
+        "large_path": "/gallery/2026/press-conference/large/photo-whatsapp-image-2026-09-12-at-62641-pm-2.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "press-conference-2026-p5",
+        "event_id": "press-conference-2026",
+        "event_name": "Press Conference",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 12 at 6.26.41 PM",
+        "thumbnail_path": "/gallery/2026/press-conference/thumbnails/photo-whatsapp-image-2026-09-12-at-62641-pm.webp",
+        "medium_path": "/gallery/2026/press-conference/medium/photo-whatsapp-image-2026-09-12-at-62641-pm.webp",
+        "large_path": "/gallery/2026/press-conference/large/photo-whatsapp-image-2026-09-12-at-62641-pm.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "press-conference-2026-p6",
+        "event_id": "press-conference-2026",
+        "event_name": "Press Conference",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 12 at 6.26.42 PM (1)",
+        "thumbnail_path": "/gallery/2026/press-conference/thumbnails/photo-whatsapp-image-2026-09-12-at-62642-pm-1.webp",
+        "medium_path": "/gallery/2026/press-conference/medium/photo-whatsapp-image-2026-09-12-at-62642-pm-1.webp",
+        "large_path": "/gallery/2026/press-conference/large/photo-whatsapp-image-2026-09-12-at-62642-pm-1.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "press-conference-2026-p7",
+        "event_id": "press-conference-2026",
+        "event_name": "Press Conference",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 12 at 6.26.42 PM (2)",
+        "thumbnail_path": "/gallery/2026/press-conference/thumbnails/photo-whatsapp-image-2026-09-12-at-62642-pm-2.webp",
+        "medium_path": "/gallery/2026/press-conference/medium/photo-whatsapp-image-2026-09-12-at-62642-pm-2.webp",
+        "large_path": "/gallery/2026/press-conference/large/photo-whatsapp-image-2026-09-12-at-62642-pm-2.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "id": "press-conference-2026-p8",
+        "event_id": "press-conference-2026",
+        "event_name": "Press Conference",
+        "year": 2026,
+        "title": "WhatsApp Image 2026 09 12 at 6.26.42 PM",
+        "thumbnail_path": "/gallery/2026/press-conference/thumbnails/photo-whatsapp-image-2026-09-12-at-62642-pm.webp",
+        "medium_path": "/gallery/2026/press-conference/medium/photo-whatsapp-image-2026-09-12-at-62642-pm.webp",
+        "large_path": "/gallery/2026/press-conference/large/photo-whatsapp-image-2026-09-12-at-62642-pm.webp",
+        "width": 1600,
+        "height": 1066
+      }
+    ],
     "cartoonotsav-2025": [
       {
         "id": "cartoonotsav-2025-p1",
@@ -2841,5 +3196,5 @@
       }
     ]
   },
-  "generatedAt": "2026-08-31T15:35:23.858Z"
+  "generatedAt": "2026-09-13T10:11:18.141Z"
 }
